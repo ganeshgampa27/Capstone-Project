@@ -14,7 +14,7 @@ export const clearAuthToken = () => {
 };
 
 export const login = async (credentials) => {
-  const response = await api.post('http://localhost:5294/api/auth/Userlogin', credentials);
+  const response = await api.post('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/auth/Userlogin', credentials);
   
   if (response.data.token) {
     setAuthToken(response.data.token);
@@ -32,38 +32,38 @@ export const initiateRegistration = async (userData) => {
     confirmPasswordHash: userData.password
   };
   
-  const response = await api.post('http://localhost:5294/api/auth/register/initiate', data);
+  const response = await api.post('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/auth/register/initiate', data);
   console.log(response.data);
   return response.data;
 };
 
 export const verifyOTP = async (otp) => {
-  const response = await api.post('http://localhost:5294/api/auth/register/verify', { otp });
+  const response = await api.post('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/auth/register/verify', { otp });
   return response.data;
 };
 
 export const resendOTP = async ({ email }) => {
-  const response = await api.post('http://localhost:5294/api/auth/register/resend-otp', { email });
+  const response = await api.post('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/auth/register/resend-otp', { email });
   return response.data;
 };
 
 export const forgotpasswordresendOTP = async ({ email }) => {
-  const response = await api.post('http://localhost:5294/api/password/resend-otp', { email });
+  const response = await api.post('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/password/resend-otp', { email });
   return response.data;
 };
 
 export const forgotPassword = async (email) => {
-  const response = await api.post('http://localhost:5294/api/password/forgot', { email });
+  const response = await api.post('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/password/forgot', { email });
   return response.data;
 };
 
 export const verifyOTPForgotPassword = async (otp) => {
-  const response = await api.post('http://localhost:5294/api/password/verify-otp', { otp });
+  const response = await api.post('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/password/verify-otp', { otp });
   return response.data;
 };
 
 export const resetPassword = async ({ email, newPassword, confirmPassword }) => {
-  const response = await api.patch('http://localhost:5294/api/password/reset', {
+  const response = await api.patch('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/password/reset', {
     email,
     newPassword,
     confirmPassword
