@@ -150,7 +150,7 @@ const TemplatesManagement = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [pageInput, setPageInput] = useState(currentPage);
 
-  const API_BASE_URL = 'http://localhost:5294';
+  const API_BASE_URL = 'https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api';
   const authToken = Cookies.get('token');
   const headers = {
     'Authorization': `Bearer ${authToken}`,

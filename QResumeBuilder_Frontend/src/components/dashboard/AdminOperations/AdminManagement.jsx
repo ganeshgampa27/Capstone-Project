@@ -48,7 +48,7 @@ const AdminManagement = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5294/api/Admin/GetUserPagination', {
+      const response = await axios.get('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/Admin/GetUserPagination', {
         params: {
           pageNumber: currentPage,
           pageSize: pageSize
@@ -170,7 +170,7 @@ const AdminManagement = () => {
             return;
           }
 
-          const response = await axios.post('http://localhost:5294/api/Admin/batch-insert', validData);
+          const response = await axios.post('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/Admin/batch-insert', validData);
           await fetchData();
           setBatchImportSuccess(response.data || `${validData.length} employees added successfully!`);
           setBatchFile(null);

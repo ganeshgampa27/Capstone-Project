@@ -104,7 +104,7 @@ const ManagerDashboard = () => {
   const [fadeOutPrefix, setFadeOutPrefix] = useState(false);
 
   const { logout } = useContext(AuthContext);
-  const API_BASE_URL = 'http://localhost:5294';
+  const API_BASE_URL = 'https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api';
   const authToken = localStorage.getItem('authToken');
   const headers = {
     'Authorization': `Bearer ${authToken}`,
