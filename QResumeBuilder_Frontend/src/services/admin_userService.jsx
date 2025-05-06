@@ -3,7 +3,7 @@ import api from './api';
 const admin_userService = {
   addUser: async (userData) => {
     try {
-      const response = await api.post('https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/Admin/AddUser', userData);
+      const response = await api.post('/Admin/AddUser', userData);
       if (response.data === null) {
         alert("User registration Failed")
       } else {
@@ -18,7 +18,7 @@ const admin_userService = {
   },
   deleteUser: async (id) => {
     try {
-      const response = await api.delete(`https://resumebuilderapi-g5d9azdneghbhqdc.southindia-01.azurewebsites.net/api/Admin/delete/${id}`);
+      const response = await api.delete(`/Admin/delete/${id}`);
       alert("User deleted Successfully")
       
       return response.data;
